@@ -5,5 +5,5 @@ node {
   stage 'Record test results and artifacts'
   sh './gradlew uploadArchives'
   step([$class: 'ArtifactArchiver', artifacts: '**/repos/*.jar', fingerprint: true])
-  step([$class: 'JUnitResultArchiver', testResults: '**/build/test-reports/TEST-*.xml'])
+  step([$class: 'JUnitResultArchiver', testResults: '**/build/test-results/TEST-*.xml'])
 }
