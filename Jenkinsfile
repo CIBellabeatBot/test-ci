@@ -1,7 +1,7 @@
 node {
   stage 'Build and Test'
   checkout scm
-  sh './gradlew build'
+  sh './gradlew clean build'
   stage 'Record test results and artifacts'
   sh './gradlew uploadArchives'
   step([$class: 'ArtifactArchiver', artifacts: '**/repos/*.jar', fingerprint: true])
